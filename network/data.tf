@@ -1,0 +1,23 @@
+## Azure key vault data block to fetch key vault information into terraform for terraform key vault
+data "azurerm_key_vault" "platform_key_vault" {
+  name                = "platformterraformkv01"
+  resource_group_name = "platform_resources_rg"
+}
+
+## Azure Key Vault secret data block to fetch vpn_secret_key value information into terraform
+data "azurerm_key_vault_secret" "vpn_secret_key" {
+  name         = "vpn-secret-key"
+  key_vault_id = data.azurerm_key_vault.platform_key_vault.id
+}
+
+## Azure Key Vault secret data block to fetch admin_user value information into terraform
+data "azurerm_key_vault_secret" "admin_user" {
+  name         = "admin-user"
+  key_vault_id = data.azurerm_key_vault.platform_key_vault.id
+}
+
+## Azure Key Vault secret data block to fetch admin_password value information into terraform
+data "azurerm_key_vault_secret" "admin_password" {
+  name         = "admin-password"
+  key_vault_id = data.azurerm_key_vault.platform_key_vault.id
+}

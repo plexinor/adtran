@@ -1,0 +1,13 @@
+variable "name" {}
+variable "location" {}
+variable "resource_group_name" {}
+variable "sku" {}
+variable "copy_paste_enabled" {}
+variable "file_copy_enabled" {}
+variable "ip_connect_enabled" {}
+variable "scale_units" {}
+variable "shareable_link_enabled" {}
+variable "tunneling_enabled" {}
+variable "subnet_id" {}
+variable "public_ip_address_id" {}
+variable "tags" {}

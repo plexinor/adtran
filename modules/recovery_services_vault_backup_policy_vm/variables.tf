@@ -1,0 +1,16 @@
+variable "name" {}
+variable "resource_group_name" {}
+variable "recovery_vault_name" {}
+variable "timezone" {}
+variable "frequency" {}
+variable "time" {}
+variable "retention_daily_count" {}
+variable "retention_weekly_count" {}
+variable "retention_weekly_weekdays" {}
+variable "retention_monthly_count" {}
+variable "retention_monthly_weekdays" {}
+variable "retention_monthly_weeks" {}
+variable "retention_yearly_count" {}
+variable "retention_yearly_weekdays" {}
+variable "retention_yearly_weeks" {}
+variable "retention_yearly_months" {}
