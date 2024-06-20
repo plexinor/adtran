@@ -15,7 +15,7 @@ module "radius-vm-01" {
   size                = "Standard_D2s_v3"
   admin_username      = data.azurerm_key_vault_secret.admin_user.value
   admin_password      = data.azurerm_key_vault_secret.admin_password.value
-  zone = "1"
+  zone                = "1"
   tags = {
     "Client"          = "Adtran"
     "Environment"     = "Prod"
@@ -26,10 +26,10 @@ module "radius-vm-01" {
   caching              = "ReadWrite"
   storage_account_type = "Standard_LRS"
   # Image
-  publisher       = "RedHat"
-  offer           = "RHEL"
-  sku             = "810-gen2"
-  image_version   = "latest"
+  publisher     = "RedHat"
+  offer         = "RHEL"
+  sku           = "810-gen2"
+  image_version = "latest"
   # Plan
   # plan_name      = "rhel"
   # product        = "rhel"

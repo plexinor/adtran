@@ -19,3 +19,14 @@ module "pdnsz_key_vault" {
     "Environment" = "Prod"
   }
 }
+
+## Module for mysql server database private dns zone
+module "pdnsz_mysql_db" {
+  source              = "../modules/private_dns_zone"
+  name                = "privatelink.mysql.database.azure.com"
+  resource_group_name = module.dns_rg.name
+  tags = {
+    "Client"      = "Adtran"
+    "Environment" = "Prod"
+  }
+}

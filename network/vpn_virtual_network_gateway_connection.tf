@@ -1,6 +1,6 @@
 ## Module for Virtual Network Gateway Connection
 module "virtual_network_gateway_connection_1" {
-  source                      = "../modules/vpn/virtual_network_gateway_connection"
+  source                     = "../modules/vpn/virtual_network_gateway_connection"
   name                       = "on_prem_vpn_connection"
   resource_group_name        = module.network_rg.name
   location                   = module.network_rg.location
@@ -11,5 +11,5 @@ module "virtual_network_gateway_connection_1" {
     "Client"          = "Adtran"
     "Environment"     = "Prod"
     "Technical Owner" = "Kiran Kothandaraman"
-  } 
+  }
 }

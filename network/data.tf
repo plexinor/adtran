@@ -21,3 +21,15 @@ data "azurerm_key_vault_secret" "admin_password" {
   name         = "admin-password"
   key_vault_id = data.azurerm_key_vault.platform_key_vault.id
 }
+
+## Azure Key Vault secret data block to fetch mysql-admin value information into terraform
+data "azurerm_key_vault_secret" "mysql_admin" {
+  name         = "mysql-admin"
+  key_vault_id = data.azurerm_key_vault.platform_key_vault.id
+}
+
+## Azure Key Vault secret data block to fetch mysql-password value information into terraform
+data "azurerm_key_vault_secret" "mysql_password" {
+  name         = "mysql-password"
+  key_vault_id = data.azurerm_key_vault.platform_key_vault.id
+}
