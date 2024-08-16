@@ -33,3 +33,9 @@ data "azurerm_key_vault_secret" "mysql_password" {
   name         = "mysql-password"
   key_vault_id = data.azurerm_key_vault.platform_key_vault.id
 }
+
+## Azure Private DNS Zone data block to fetch information into terraform for private endpoints
+data "azurerm_private_dns_zone" "pdnsz_mysql_aerver_db" {
+  name                = "privatelink.mysql.database.azure.com"
+  resource_group_name = "dns_rg"
+}

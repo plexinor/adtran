@@ -1,5 +1,4 @@
 
-variable "location" {}
 variable "name" {}
 variable "priority" {}
 variable "direction" {}
@@ -11,4 +10,4 @@ variable "source_address_prefix" {}
 variable "destination_address_prefix" {}
 variable "resource_group_name" {}
 variable "network_security_group_name" {}
-variable "tags" {}
+

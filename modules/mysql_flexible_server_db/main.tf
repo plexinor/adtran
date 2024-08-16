@@ -9,19 +9,24 @@ resource "azurerm_mysql_flexible_server" "mysql_flexible_server" {
   administrator_password = var.administrator_password
   version                = var.mysql_version
   sku_name               = var.sku_name
+  backup_retention_days        = var.backup_retention_days
+  geo_redundant_backup_enabled = var.geo_redundant_backup_enabled
+  zone = var.zone
+  high_availability {
+    mode                      = var.ha_mode
+    standby_availability_zone = var.standby_availability_zone
+  }
   storage {
     size_gb            = var.storage_size
     io_scaling_enabled = var.io_scaling_enabled
     auto_grow_enabled  = var.auto_grow_enabled
   }
-  backup_retention_days        = var.backup_retention_days
-  geo_redundant_backup_enabled = var.geo_redundant_backup_enabled
   tags                         = var.tags
 }
 
 ## Database
 resource "azurerm_mysql_flexible_database" "radius_database" {
-  name                = var.name
+  name                = var.database_name
   resource_group_name = var.resource_group
   server_name         = azurerm_mysql_flexible_server.mysql_flexible_server.name
   charset             = "utf8"

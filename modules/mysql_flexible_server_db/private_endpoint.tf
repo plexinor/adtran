@@ -12,6 +12,10 @@ resource "azurerm_private_endpoint" "flexiserver_private_endpoint" {
     private_connection_resource_id = resource.azurerm_mysql_flexible_server.mysql_flexible_server.id
     subresource_names              = ["mysqlServer"]
   }
+  private_dns_zone_group {
+    name                 = "${var.name}-mysql-pe-dns-zone-group"
+    private_dns_zone_ids = [var.private_dns_zone_ids]
+  }
   lifecycle {
     ignore_changes = [
       private_dns_zone_group
