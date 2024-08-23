@@ -3,7 +3,7 @@ data "azurerm_client_config" "current" {}
 
 ## Azure Subnet data block to fetch network information into terraform for private endpoints
 data "azurerm_subnet" "private_endpoint_subnet" {
-  name                 = "internal_subnet"
+  name                 = "internal-subnet"
   virtual_network_name = "hub_vnet"
   resource_group_name  = "network_rg"
 }
